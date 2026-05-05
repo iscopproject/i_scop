@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Clubs & Organizations Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="https://lpcbataan.com/assets/img/Logo.png?h=2f6723b60999c78128f745e0ad2bac34" alt="LPC Logo">
+                <h1>I-Scoop</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#clubs">Clubs</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#announcements">Announcements</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#" id="openAuthModal">Login / Signup</a></li>
+                <li><a href="#" id="logoutBtn" style="display: none;">Logout</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Join Your School Community</h2>
+                <p id="authWelcomeText" style="display: none; margin-bottom: 10px; font-weight: 600;"></p>
+                <p>Discover clubs, participate in events, and connect with fellow students</p>
+                <div class="hero-buttons">
+                    <a href="#clubs" class="btn btn-primary">Explore Clubs</a>
+                    <a href="#events" class="btn btn-secondary">Upcoming Events</a>
+                    <a href="#" class="btn btn-outline" id="heroAuthBtn">Create Account</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-users hero-icon"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-card">
+                <i class="fas fa-chess-club"></i>
+                <h3 id="clubCount">15</h3>
+                <p>Active Clubs</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-calendar-check"></i>
+                <h3 id="eventCount">28</h3>
+                <p>Upcoming Events</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-user-friends"></i>
+                <h3 id="memberCount">450+</h3>
+                <p>Active Members</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-trophy"></i>
+                <h3 id="achievementCount">120+</h3>
+                <p>Achievements</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clubs Section -->
+    <section class="section clubs" id="clubs">
+        <div class="container">
+            <h2 class="section-title">Our Clubs & Organizations</h2>
+            <p class="section-subtitle">Find your passion and join a community</p>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="academic">Academic</button>
+                <button class="filter-btn" data-filter="arts">Arts</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+                <button class="filter-btn" data-filter="service">Service</button>
+                <button class="filter-btn" data-filter="tech">Technology</button>
+            </div>
+            
+            <div class="clubs-grid" id="clubsContainer">
+                <!-- Clubs will be loaded here by JavaScript -->
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="btn btn-outline" onclick="showAllClubs()">View All Clubs</a>
+		
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="section events" id="events">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <p class="section-subtitle">Join our school activities</p>
+            
+            <div class="events-container">
+                <!-- Events will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcements Section -->
+    <section class="section announcements" id="announcements">
+        <div class="container">
+            <h2 class="section-title">Latest Announcements</h2>
+            <p class="section-subtitle">Stay updated with school news</p>
+            
+            <div class="announcements-container">
+                <!-- Announcements will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Join Section -->
+    <section class="section join">
+        <div class="container">
+            <h2 class="section-title">How to Join a Club</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Explore Clubs</h3>
+                    <p>Browse through our club directory and find ones that match your interests</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Attend Meeting</h3>
+                    <p>Visit a club meeting to learn more about their activities and members</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Sign Up</h3>
+                    <p>Fill out the membership form and pay any required dues (if applicable)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Get Involved</h3>
+                    <p>Participate in club activities, events, and take on leadership roles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>School Clubs Hub</h3>
+                    <p>Connecting students with opportunities to learn, grow, and lead through extracurricular activities.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#clubs">All Clubs</a></li>
+                        <li><a href="#events">Calendar</a></li>
+                        <li><a href="#announcements">Announcements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> School Main Building, Room 205</p>
+                    <p><i class="fas fa-envelope"></i> clubs@ourschool.edu</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 School Clubs Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Club Details Modal -->
+    <div class="modal" id="clubModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalContent">
+                <!-- Club details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Authentication Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content auth-modal-content">
+            <span class="close-modal" id="closeAuthModal">&times;</span>
+            <h2>Account Access</h2>
+            <p class="section-subtitle" style="margin-bottom: 20px; text-align: left;">Sign up or log in to manage your profile.</p>
+
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" id="loginTabBtn" type="button">Login</button>
+                <button class="auth-tab-btn" id="signupTabBtn" type="button">Signup</button>
+                <button class="auth-tab-btn" id="presidentTabBtn" type="button">President</button>
+            </div>
+
+            <div id="authMessage" class="auth-message" style="display: none;"></div>
+
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <input type="email" id="loginEmail" placeholder="Email address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button class="btn btn-primary auth-submit-btn" type="submit">Login</button>
+            </form>
+
+            <form id="signupForm" class="auth-form" style="display: none;">
+                <div class="form-group">
+                    <input type="text" id="signupFullname" placeholder="Full name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="signupEmail" placeholder="Email address" required>
+                </div>
+                <div class="form-group">
+                    <label class="auth-label">Select your organization</label>
+                    <select id="signupClubSelect" required></select>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="signupConfirmPassword" placeholder="Confirm password" required>
+                </div>
+                <button class="btn btn-primary auth-submit-btn" type="submit">Create Account</button>
+            </form>
+
+            <form id="presidentLoginForm" class="auth-form" style="display: none;">
+                <div class="form-group">
+                    <input type="email" id="presidentEmail" placeholder="President email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="presidentPassword" placeholder="Password" required>
+                </div>
+                <button class="btn btn-primary auth-submit-btn" type="submit">Login as President</button>
+            </form>
+
+            <div id="presidentPanel" class="president-panel" style="display: none;">
+                <div class="president-panel-header">
+                    <h3>Club President Dashboard</h3>
+                    <p id="presidentClubName" style="font-weight: bold; color: var(--primary-color);"></p>
+                </div>
+
+                <div class="president-section">
+                <h4>Post New Announcement</h4>
+                <form id="announcementForm" class="auth-form">
+                    <div class="form-group">
+                        <input type="text" id="annTitle" placeholder="Announcement Title" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="annContent" placeholder="Announcement Details" rows="4" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="annImage" style="display: block; margin-bottom: 8px; font-size: 0.9rem; color: #666;">Announcement Image (Optional)</label>
+                        <input type="file" id="annImage" accept="image/*" style="padding: 8px; border: 1px dashed #ddd; width: 100%;">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Post Announcement</button>
+                </form>
+            </div>
+
+            <div class="president-section">
+                <h4>Add Upcoming Event</h4>
+                <form id="eventForm" class="auth-form">
+                    <div class="form-group">
+                        <input type="text" id="eventTitle" placeholder="Event Title" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="eventDate" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="eventTime" placeholder="Event Time (e.g. 2:00 PM - 5:00 PM)" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="eventLocation" placeholder="Location" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="eventDescription" placeholder="Event Description" rows="3" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;"></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Add Event</button>
+                </form>
+            </div>
+
+            <div class="president-section">
+                 <h4>Add Achievement</h4>
+                 <form id="achievementForm" class="auth-form">
+                     <div class="form-group">
+                         <input type="text" id="achTitle" placeholder="Achievement Title" required>
+                     </div>
+                     <div class="form-group">
+                         <textarea id="achDescription" placeholder="Achievement Description" rows="3" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;"></textarea>
+                     </div>
+                     <div class="form-group">
+                        <label for="achImage" style="display: block; margin-bottom: 8px; font-size: 0.9rem; color: #666;">Achievement Photo (Optional)</label>
+                        <input type="file" id="achImage" accept="image/*" style="padding: 8px; border: 1px dashed #ddd; width: 100%;">
+                    </div>
+                     <button class="btn btn-primary" type="submit">Add Achievement</button>
+                 </form>
+             </div>
+
+             <div class="president-section">
+                <h4>Manage Your Content</h4>
+                <div id="presidentContentList" style="margin-top: 15px;">
+                    <p class="text-muted">Loading your events and achievements...</p>
+                </div>
+             </div>
+
+                <div class="president-section" style="margin-top: 30px;">
+                    <div class="president-panel-header">
+                        <h3>Pending Membership Requests</h3>
+                        <button type="button" class="club-action-btn" id="refreshPendingBtn">Refresh</button>
+                    </div>
+                    <div id="pendingMembersList" class="pending-members-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="eventsPromptModal">
+        <div class="modal-content events-prompt-modal-content full-screen-modal-content">
+            <span class="close-modal" id="closeEventsPromptModal">&times;</span>
+            <div class="special-hero">
+                <p class="special-eyebrow">Student Portal</p>
+                <h2>Special Event Achievements and Announcement</h2>
+                <p id="eventsPromptSubtitle" class="section-subtitle events-prompt-subtitle"></p>
+            </div>
+            <div class="special-sections-grid">
+                <section class="special-panel">
+                    <h3 class="special-section-title">Upcoming Events</h3>
+                    <div id="eventsPromptList" class="events-prompt-list"></div>
+                </section>
+                <section class="special-panel">
+                    <h3 class="special-section-title">Achievements</h3>
+                    <div id="achievementsPromptList" class="events-prompt-list"></div>
+                </section>
+                <section class="special-panel">
+                    <h3 class="special-section-title">Announcements</h3>
+                    <div id="announcementsPromptList" class="events-prompt-list"></div>
+                </section>
+            </div>
+            <div class="events-prompt-actions">
+                <button type="button" class="btn btn-primary" id="goToEventsBtn">View Events Section</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
